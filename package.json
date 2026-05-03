@@ -1,7 +1,11 @@
 {
-  "name": "ai-app",
+  "name": "ai-chatbot-project",
   "version": "1.0.0",
+  "description": "Simple chatbot schedule app for AI Seekho 2026",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^4.18.2"
   }
