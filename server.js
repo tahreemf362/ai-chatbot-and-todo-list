@@ -1,13 +1,19 @@
-const express = require('express');
+const express = require("express");
+const path = require("path");
+
 const app = express();
 
-app.use(express.static('.'));
+// Static files serve karo (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname)));
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+// Home route
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`Running on port ${port}`);
+// Cloud Run automatically PORT provide karta hai
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
 });
